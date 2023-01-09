@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace consoleManagement.Services
 {
-    internal class MenuService
+    internal class MenuService:IMenuService
     {
         GroupService groupService = new GroupService();
         public void CreateGroupMenu()
