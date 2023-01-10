@@ -68,24 +68,31 @@ namespace consoleManagement.Services
                 Console.WriteLine($"{groupName} adli qrup yoxdur.");
             }
         }
-        public void CreateStudent(string studentName,string studentSurname,string groupNo,string type)
+        public void CreateStudent(string fullName,string groupNo,string type)
         {
-            foreach(Group group in Groups)
-            {
-                if(groupNo == group.No)
-                {
-                    Student student = new Student()
-                    {
-                        FullName = $"{studentName} {studentSurname}",
-                        GroupNo = groupNo,
-                        Type = type
-                    };
-                       group.Students.Add(student);
-                    return;
+            if (string.IsNullOrEmpty(fullName) || string.IsNullOrEmpty(groupNo) || string.IsNullOrEmpty(type)){
+                Console.WriteLine("Zehmet olmasa deyerleri duzgun daxil edin");
 
+            }else
+            {
+                foreach (Group group in Groups)
+                {
+                    if (groupNo == group.No)
+                    {
+                        Student student = new Student()
+                        {
+                            FullName = fullName,
+                            GroupNo = groupNo,
+                            Type = type
+                        };
+                        group.Students.Add(student);
+                        return;
+
+                    }
                 }
             }
-            Console.WriteLine($"{groupNo} adli qrup yoxdur.");
+            
+         
 
         }
         public void ShowStudentsByGroup(string groupName){ 

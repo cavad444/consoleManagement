@@ -9,7 +9,10 @@ Console.WriteLine("6.Yeni telebe yarat");
 Console.WriteLine("0.Proqrami sonlandir");
 GroupService groupService = new();
 MenuService menuService = new();
-int decision = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("   ");
+Console.WriteLine("Yuxaridaki sechimlerden birini edin: ");
+int.TryParse(Console.ReadLine(), out int decision);
+    //int decision = Convert.ToInt32(Console.ReadLine());
 while (decision != 0)
 {
     if (decision == 1)

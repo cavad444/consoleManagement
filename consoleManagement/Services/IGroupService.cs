@@ -13,7 +13,7 @@ namespace consoleManagement.Services
         public void CreateGroup(string no, string category, string isOnline);
         public void ShowGroups();
         public void EditGroup(string groupName,string newNameOfGroup);
-        public void CreateStudent(string studentName, string studentSurname,string groupNo,string type);
+        public void CreateStudent(string fullName,string groupNo,string type);
         public void ShowStudentsByGroup(string groupName);
         public void ShowAllStudents();
     }

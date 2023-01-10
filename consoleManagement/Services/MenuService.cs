@@ -44,15 +44,13 @@ namespace consoleManagement.Services
         }
         public void CreateStudentMenu()
         {
-            Console.WriteLine("Telebenin adini daxil edin");
-            string studentName = Console.ReadLine();
-            Console.WriteLine("Telebenin soyadini daxil edin");
-            string studentSurname = Console.ReadLine();
+            Console.WriteLine("Telebenin adini ve soyadini daxil edin");
+            string fullName = Console.ReadLine();
             Console.WriteLine("Qrup nomresini daxil edin");
             string groupNo = Console.ReadLine();
             Console.WriteLine("Telebenin zemanetli olub olmama tipini daxil edin (zemanetli ve ya zemanetsiz sozlerinden birini daxil edin.).");
             string type = Console.ReadLine();
-            groupService.CreateStudent(studentName, studentSurname, groupNo, type);
+            groupService.CreateStudent(fullName, groupNo, type);
         }
     }
 }
